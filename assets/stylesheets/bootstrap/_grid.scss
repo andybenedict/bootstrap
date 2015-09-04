@@ -82,3 +82,18 @@
 @media (min-width: $screen-lg-min) {
   @include make-grid(lg);
 }
+
+//Actualize the extend only selectors
+@if ( index($actualize, grid) ) {
+    $gridset: xs, sm, md, lg;
+    @for $i from 0 through 12{
+        @each $grid in $gridset{
+            @if $i > 0{
+                .col-#{$grid}-#{$i} { @extend %col-#{$grid}-#{$i}; }
+            }
+            .col-#{$grid}-pull-#{$i} { @extend %col-#{$grid}-pull-#{$i}; }
+            .col-#{$grid}-push-#{$i} { @extend %col-#{$grid}-push-#{$i}; }
+            .col-#{$grid}-offset-#{$i} { @extend %col-#{$grid}-offset-#{$i}; }
+        }
+    }
+}
