@@ -4,11 +4,11 @@
 
 
 // Wrapper for the slide container and indicators
-.carousel {
+%carousel {
   position: relative;
 }
 
-.carousel-inner {
+%carousel-inner {
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -90,7 +90,7 @@
 // Left/right controls for nav
 // ---------------------------
 
-.carousel-control {
+%carousel-control {
   position: absolute;
   top: 0;
   left: 0;
@@ -124,28 +124,28 @@
   }
 
   // Toggles
-  .icon-prev,
-  .icon-next,
-  .glyphicon-chevron-left,
-  .glyphicon-chevron-right {
+  %icon-prev,
+  %icon-next,
+  %glyphicon-chevron-left,
+  %glyphicon-chevron-right {
     position: absolute;
     top: 50%;
     margin-top: -10px;
     z-index: 5;
     display: inline-block;
   }
-  .icon-prev,
-  .glyphicon-chevron-left {
+  %icon-prev,
+  %glyphicon-chevron-left {
     left: 50%;
     margin-left: -10px;
   }
-  .icon-next,
-  .glyphicon-chevron-right {
+  %icon-next,
+  %glyphicon-chevron-right {
     right: 50%;
     margin-right: -10px;
   }
-  .icon-prev,
-  .icon-next {
+  %icon-prev,
+  %icon-next {
     width:  20px;
     height: 20px;
     line-height: 1;
@@ -153,12 +153,12 @@
   }
 
 
-  .icon-prev {
+  %icon-prev {
     &:before {
       content: '\2039';// SINGLE LEFT-POINTING ANGLE QUOTATION MARK (U+2039)
     }
   }
-  .icon-next {
+  %icon-next {
     &:before {
       content: '\203a';// SINGLE RIGHT-POINTING ANGLE QUOTATION MARK (U+203A)
     }
@@ -170,7 +170,7 @@
 // Add an unordered list with the following class and add a list item for each
 // slide your carousel holds.
 
-.carousel-indicators {
+%carousel-indicators {
   position: absolute;
   bottom: 10px;
   left: 50%;
@@ -203,7 +203,7 @@
     background-color: #000 \9; // IE8
     background-color: rgba(0,0,0,0); // IE9
   }
-  .active {
+  %active {
     margin: 0;
     width:  12px;
     height: 12px;
@@ -214,7 +214,7 @@
 // Optional captions
 // -----------------------------
 // Hidden by default for smaller viewports
-.carousel-caption {
+%carousel-caption {
   position: absolute;
   left: 15%;
   right: 15%;
@@ -225,7 +225,7 @@
   color: $carousel-caption-color;
   text-align: center;
   text-shadow: $carousel-text-shadow;
-  & .btn {
+  & %btn {
     text-shadow: none; // No shadow for button elements in carousel-caption
   }
 }
@@ -235,35 +235,52 @@
 @media screen and (min-width: $screen-sm-min) {
 
   // Scale up the controls a smidge
-  .carousel-control {
-    .glyphicon-chevron-left,
-    .glyphicon-chevron-right,
-    .icon-prev,
-    .icon-next {
+  %carousel-control {
+    %glyphicon-chevron-left,
+    %glyphicon-chevron-right,
+    %icon-prev,
+    %icon-next {
       width: 30px;
       height: 30px;
       margin-top: -15px;
       font-size: 30px;
     }
-    .glyphicon-chevron-left,
-    .icon-prev {
+    %glyphicon-chevron-left,
+    %icon-prev {
       margin-left: -15px;
     }
-    .glyphicon-chevron-right,
-    .icon-next {
+    %glyphicon-chevron-right,
+    %icon-next {
       margin-right: -15px;
     }
   }
 
   // Show and left align the captions
-  .carousel-caption {
+  %carousel-caption {
     left: 20%;
     right: 20%;
     padding-bottom: 30px;
   }
 
   // Move up the indicators
-  .carousel-indicators {
+  %carousel-indicators {
     bottom: 20px;
   }
+}
+
+@if ( index($actualize, carousel) ) {
+
+  .active { @extend %active; }
+  .btn { @extend %btn; }
+  .carousel-caption { @extend %carousel-caption; }
+  .carousel-control { @extend %carousel-control; }
+  .carousel-indicators { @extend %carousel-indicators; }
+  .carousel-inner { @extend %carousel-inner; }
+  .carousel { @extend %carousel; }
+  .glyphicon { @extend %glyphicon; }
+  .glyphicon-chevron-left { @extend %glyphicon-chevron-left; }
+  .glyphicon-chevron-right { @extend %glyphicon-chevron-right; }
+  .icon-next { @extend %icon-next; }
+  .icon-prev { @extend %icon-prev; }
+
 }
