@@ -7,7 +7,7 @@
 //
 // Set the container width, and override it for fixed navbars in media queries.
 
-.container {
+%container {
   @include container-fixed;
 
   @media (min-width: $screen-sm-min) {
@@ -27,7 +27,7 @@
 // Utilizes the mixin meant for fixed width containers, but without any defined
 // width for fluid, full width layouts.
 
-.container-fluid {
+%container-fluid {
   @include container-fixed;
 }
 
@@ -36,7 +36,7 @@
 //
 // Rows contain and clear the floats of your columns.
 
-.row {
+%row {
   @include make-row;
 }
 
@@ -85,15 +85,20 @@
 
 //Actualize the extend only selectors
 @if ( index($actualize, grid) ) {
-    $gridset: xs, sm, md, lg;
-    @for $i from 0 through 12{
-        @each $grid in $gridset{
-            @if $i > 0{
-                .col-#{$grid}-#{$i} { @extend %col-#{$grid}-#{$i}; }
-            }
-            .col-#{$grid}-pull-#{$i} { @extend %col-#{$grid}-pull-#{$i}; }
-            .col-#{$grid}-push-#{$i} { @extend %col-#{$grid}-push-#{$i}; }
-            .col-#{$grid}-offset-#{$i} { @extend %col-#{$grid}-offset-#{$i}; }
-        }
+    
+  .row { @extend %row; }
+  .container { @extend %container; }
+  .container-fluid { @extend %container-fluid; }
+    
+  $gridset: xs, sm, md, lg;
+  @for $i from 0 through 12{
+    @each $grid in $gridset{
+      @if $i > 0{
+        .col-#{$grid}-#{$i} { @extend %col-#{$grid}-#{$i}; }
+      }
+      .col-#{$grid}-pull-#{$i} { @extend %col-#{$grid}-pull-#{$i}; }
+      .col-#{$grid}-push-#{$i} { @extend %col-#{$grid}-push-#{$i}; }
+      .col-#{$grid}-offset-#{$i} { @extend %col-#{$grid}-offset-#{$i}; }
     }
+  }
 }
