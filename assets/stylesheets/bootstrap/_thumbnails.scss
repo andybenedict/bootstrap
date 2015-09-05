@@ -4,7 +4,7 @@
 
 
 // Mixin and adjust the regular image class
-.thumbnail {
+%thumbnail {
   display: block;
   padding: $thumbnail-padding;
   margin-bottom: $line-height-computed;
@@ -24,15 +24,24 @@
   // [converter] extracted a&:hover, a&:focus, a&.active to a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active
 
   // Image captions
-  .caption {
+  %caption {
     padding: $thumbnail-caption-padding;
     color: $thumbnail-caption-color;
   }
 }
 
 // Add a hover state for linked versions only
-a.thumbnail:hover,
-a.thumbnail:focus,
-a.thumbnail.active {
+a%thumbnail:hover,
+a%thumbnail:focus,
+a%thumbnail%active {
   border-color: $link-color;
+}
+
+//Actualize the extend only selectors
+@if ( index($actualize, jumbotron) ) {
+
+  .thumbnail { @extend %thumbnail; }
+  .caption { @extend %caption; }
+  .active { @extend %active; }
+
 }
