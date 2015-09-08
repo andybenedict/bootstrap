@@ -70,9 +70,11 @@
 
 //Actualize the extend only selectors
 @if ( index($actualize, code) ) {
-    code { @extend %ele-code; }
-    kbd { @extend %ele-kbd; }
-    pre { @extend %ele-pre; }
-    samp { @extend %ele-samp; }
-    .pre-scrollable { @extend %pre-scrollable; }
+
+  code { @extend %ele-code; }
+  kbd { @extend %ele-kbd; }
+  pre { @extend %ele-pre; }
+  samp { @extend %ele-samp; }
+  .pre-scrollable { @extend %pre-scrollable; }
+  
 }
