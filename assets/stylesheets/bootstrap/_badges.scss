@@ -39,8 +39,8 @@
   // [converter] extracted a& to a.badge
 
   // Account for badges in navs
-  %list-group-item.active > &,
-  %nav-pills > .active > a > & {
+  %list-group-item%active > &,
+  %nav-pills > %active > a > & {
     color: $badge-active-color;
     background-color: $badge-active-bg;
   }
@@ -80,5 +80,6 @@ a%badge {
   .list-group-item { @extend %list-group-item; }
   .list-group-item { @extend %list-group-item; }
   .nav-pills { @extend %nav-pills; }
+  .active { @extend %active; }
 
 }

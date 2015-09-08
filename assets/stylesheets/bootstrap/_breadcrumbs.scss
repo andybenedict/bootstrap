@@ -22,7 +22,7 @@
     }
   }
 
-  > .active {
+  > %active {
     color: $breadcrumb-active-color;
   }
 }
@@ -31,5 +31,6 @@
 @if ( index($actualize, breadcrumbs) ) {
 
   .breadcrumb { @extend %breadcrumb; }
+  .active { @extend %active; }
 
 }
