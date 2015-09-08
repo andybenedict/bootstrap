@@ -3,7 +3,7 @@
 // --------------------------------------------------
 
 
-.pager {
+%pager {
   padding-left: 0;
   margin: $line-height-computed 0;
   list-style: none;
@@ -27,21 +27,21 @@
     }
   }
 
-  .next {
+  %next {
     > a,
     > span {
       float: right;
     }
   }
 
-  .previous {
+  %previous {
     > a,
     > span {
       float: left;
     }
   }
 
-  .disabled {
+  %disabled {
     > a,
     > a:hover,
     > a:focus,
@@ -51,4 +51,14 @@
       cursor: $cursor-disabled;
     }
   }
+}
+
+//Actualize the extend only selectors
+@if ( index($actualize, pager) ) {
+
+  .pager { @extend %pager; }
+  .next { @extend %next; }
+  .previous { @extend %previous; }
+  .disabled { @extend %disabled; }
+
 }
