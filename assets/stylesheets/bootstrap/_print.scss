@@ -69,20 +69,20 @@
     // Bootstrap specific changes start
 
     // Bootstrap components
-    .navbar {
+    %navbar {
         display: none;
     }
-    .btn,
-    .dropup > .btn {
-        > .caret {
+    %btn,
+    %dropup > %btn {
+        > %caret {
             border-top-color: #000 !important;
         }
     }
-    .label {
+    %label {
         border: 1px solid #000;
     }
 
-    .table {
+    %table {
         border-collapse: collapse !important;
 
         td,
@@ -90,7 +90,7 @@
             background-color: #fff !important;
         }
     }
-    .table-bordered {
+    %table-bordered {
         th,
         td {
             border: 1px solid #ddd !important;
