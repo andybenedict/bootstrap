@@ -43,7 +43,7 @@
   padding-right: ($alert-padding + 20);
 
   // Adjust close link position
-  .close {
+  %close {
     position: relative;
     top: -2px;
     right: -21px;
@@ -82,5 +82,6 @@
   .alert-info { @extend %alert-info; }
   .alert-warning { @extend %alert-warning; }
   .alert-danger { @extend %alert-danger; }
+  .close { @extend %close; }
     
 }
