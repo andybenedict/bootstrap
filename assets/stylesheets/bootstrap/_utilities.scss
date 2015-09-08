@@ -6,16 +6,16 @@
 // Floats
 // -------------------------
 
-.clearfix {
+%clearfix {
   @include clearfix;
 }
-.center-block {
+%center-block {
   @include center-block;
 }
-.pull-right {
+%pull-right {
   float: right !important;
 }
-.pull-left {
+%pull-left {
   float: left !important;
 }
 
@@ -24,16 +24,16 @@
 // -------------------------
 
 // Note: Deprecated .hide in favor of .hidden or .sr-only (as appropriate) in v3.0.1
-.hide {
+%hide {
   display: none !important;
 }
-.show {
+%show {
   display: block !important;
 }
-.invisible {
+%invisible {
   visibility: hidden;
 }
-.text-hide {
+%text-hide {
   @include text-hide;
 }
 
@@ -42,7 +42,7 @@
 //
 // Credit: HTML5 Boilerplate
 
-.hidden {
+%hidden {
   display: none !important;
 }
 
@@ -50,6 +50,22 @@
 // For Affix plugin
 // -------------------------
 
-.affix {
+%affix {
   position: fixed;
+}
+
+//Actualize the extend only selectors
+@if ( index($actualize, utilities) ) {
+
+  .clearfix { @extend %clearfix; }
+  .center-block { @extend %center-block; }
+  .pull-right { @extend %pull-right; }
+  .pull-left { @extend %pull-left; }
+  .hide { @extend %hide; }
+  .show { @extend %show; }
+  .invisible { @extend %invisible; }
+  .text-hide { @extend %text-hide; }
+  .hidden { @extend %hidden; }
+  .affix { @extend %affix; }
+
 }
