@@ -871,11 +871,10 @@ $dl-horizontal-offset:        $component-offset-horizontal !default;
 //** Horizontal line color.
 $hr-border:                   $gray-lighter !default;
 
-$actualize: 
+$actualize:
     alerts, 
     badges, 
     breadcrumbs, 
-    button-groups, 
     buttons, 
     carousel, 
     close, 
@@ -897,13 +896,11 @@ $actualize:
     pagination, 
     panels, 
     popovers, 
-    print, 
     progress-bars, 
     responsive-embed, 
     responsive-utilities, 
     scaffolding, 
     tables, 
-    theme, 
     thumbnails, 
     tooltip, 
     type, 

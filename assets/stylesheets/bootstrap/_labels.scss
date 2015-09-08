@@ -66,7 +66,7 @@ a%label {
 }
 
 //Actualize the extend only selectors
-@if ( index($actualize, jumbotron) ) {
+@if ( index($actualize, labels) ) {
 
   .label { @extend %label; }
   .btn { @extend %btn; }

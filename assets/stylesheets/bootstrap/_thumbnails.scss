@@ -38,7 +38,7 @@ a%thumbnail%active {
 }
 
 //Actualize the extend only selectors
-@if ( index($actualize, jumbotron) ) {
+@if ( index($actualize, thumbnails) ) {
 
   .thumbnail { @extend %thumbnail; }
   .caption { @extend %caption; }
